@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "../styles/input.css";
 import "../styles/button.css";
 
-export default function Filter ({value, onChange}) {
+ function Filter ({value, onChange}) {
     return (
       <label className="label filter__label">
         Find contacts by name
@@ -17,4 +18,11 @@ export default function Filter ({value, onChange}) {
         />
       </label>
     );
+ }
+Filter.prototype = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
 }
+
+
+ export default Filter

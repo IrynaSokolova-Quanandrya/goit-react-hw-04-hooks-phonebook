@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "../styles/input.css";
 
-export default function Input({
+function Input({
   onChange,
   labelName,
   value,
@@ -32,3 +33,16 @@ export default function Input({
     );
   
 }
+
+Input.prototype = {
+  onChange: PropTypes.func.isRequired,
+  labelName: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  pattern: PropTypes.string,
+  title: PropTypes.string.isRequired,
+}
+
+export default Input

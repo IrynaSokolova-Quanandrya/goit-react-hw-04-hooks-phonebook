@@ -1,8 +1,9 @@
-import  React from "react";
+import React from "react";
+import PropTypes from 'prop-types';
 import "../styles/button.css";
 import "../styles/contactList.css";
 
-export default function ContactList({ contacts, onDeleteContact }) {
+ function ContactList({ contacts, onDeleteContact }) {
   return (
       <ul className="contact__list">
         {contacts.map(({ id, name, number }) => (
@@ -20,3 +21,8 @@ export default function ContactList({ contacts, onDeleteContact }) {
       </ul>
     );
 }
+ContactList.prototype = {
+  contacts: PropTypes.object.isRequired,
+  onDeleteContact: PropTypes.func.isRequired
+}
+export default ContactList
